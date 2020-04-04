@@ -74,6 +74,26 @@
     <button v-on:click="success2 = !success2">Toggle Success 2</button>
     <button v-on:click="error2 = !error2">Toggle Error 2</button>
 
+    <h3 class="principle">You can loop through data</h3>
+    <p>Zenner Home Shopping List:</p>
+    <ul><li v-for="plant in plants" class="example">{{ plant }}</li></ul>
+    <p>You can also access the array index by including it in the <strong>v-for</strong> loop...it's the second parameter just like a normal <strong>forEach</strong>:</p>
+    <p>The cutest puppers:</p>
+    <ul>
+      <li v-for="(pup, index) in puppers"><span class="example">{{ pup.name }}</span> is a <span class="example">{{ pup.breed }}</span> and number <span class="example">{{ index + 1 }}</span> in my heart.</li>
+    </ul>
+    <p>You can add <strong>v-for</strong> to any HTML element, not just list items. If you don't want to add unnecessary container divs, Vue makes use of the <strong>< template ></strong> element:</p>
+    <template v-for="(plant, index) in plants">
+      <h4>The index is <span class="example">{{ index }}</span></h4>
+      <h5>A recommended plant for the home is <span class="example">{{ plant }}</span>.</h5>
+    </template>
+    <p>If you don't know the names of the key-value pairs you can just loop through an object without them:</p>
+    <table>
+      <tr v-for="pup in puppers">
+        <td v-for="(val, key) in pup">{{ key }}: {{ val }}</td>
+      </tr>
+    </table>
+
   </div>
 
   <script src="app.js"></script>

@@ -17,6 +17,12 @@ new Vue({
     error: false,
     success2: false,
     error2: false,
+    plants: ['Zamioculcas', 'Pothos', 'English Ivy', 'Boston Fern'],
+    puppers: [
+      { name: 'Ollie', breed: 'hound' },
+      { name: 'Clarebare', breed: 'dachshund' },
+      { name: 'Jeevers', breed: 'cocker spaniel' },
+    ],
   },
   methods: {
     greet: function () { return `Good morning ${this.name}!` },
