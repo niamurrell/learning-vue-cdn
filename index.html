@@ -11,9 +11,24 @@
 
 <body>
   <div id="vue-app">
-    <h1>{{ name }}</h1>
-    <h2>{{ job }}</h2>
-    <h2>{{ greet(name) }}</h2>
+    <h1>{{ greet(name) }} You're such a {{ job }}.</h1>
+
+    <h3>Use v-bind to add data to anchor attributes:</h3>
+    <a v-bind:href="website">Website</a>
+    <br>
+    <a :href="website">v-bind keyword is implied with colon</a>
+
+    <h3>v-bind is for any element's attributes:</h3>
+    <input type="text" value="name"><br>
+    <input type="text" v-bind:value="name"><br>
+    <input type="text" :value="name">
+
+    <h3>Vue data is output as a string without v-html:</h3>
+    <p>{{ websiteElement }}</p>
+    <p v-html="websiteElement"></p>
+    <p><em><strong>Note:</strong> Dynamically rendering arbitrary HTML on your website can be very dangerous because it
+        can easily lead to XSS vulnerabilities. Only use HTML interpolation on trusted content and never on
+        user-provided content. (<a href="https://vuejs.org/v2/guide/syntax.html#Raw-HTML">docs</a>)</em></p>
   </div>
 
   <script src="app.js"></script>
