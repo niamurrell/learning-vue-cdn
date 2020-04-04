@@ -11,9 +11,12 @@
 
 <body>
   <div id="vue-app">
-    <h1>{{ greet(name) }} You're such a {{ job }}.</h1>
-    <h2>You have {{ bottleCount }} bottles of champagne.</h2>
-    <p>Events can be in the HTML or in the Vue instance. <strong>v=on:</strong> === <strong>@</strong>.</p>
+    <h1><span class="example">{{ greet(name) }}</span> You're such a <span class="example">{{ job }}</span>.
+    </h1>
+
+    <h3 class="principle">Events can be in the HTML or in the Vue instance.</h3>
+    <h2>You have <span class="example">{{ bottleCount }}</span> bottles of champagne.</h2>
+    <p> <strong>v=on:</strong> === <strong>@</strong>.</p>
     <button v-on:click="bottleCount++">Get one!</button>
     <button v-on:click="bottleCount--">Drink one!</button>
     <button @dblclick="addTwo">Get two!</button>
@@ -23,22 +26,28 @@
         href="https://vuejs.org/v2/guide/events.html#Key-Modifiers">key modifiers</a> for key press events (like
       pressing enter, tab, etc.).</p>
 
-    <h3>Use v-bind to add data to anchor attributes:</h3>
+    <h3 class="principle">Use v-bind to add data to anchor attributes:</h3>
     <a v-bind:href="website">Website</a>
     <br>
     <a :href="website">v-bind keyword is implied with colon</a>
 
-    <h3>v-bind is for any element's attributes:</h3>
+    <h3 class="principle">v-bind is for any element's attributes:</h3>
     <input type="text" value="name"><br>
     <input type="text" v-bind:value="name"><br>
     <input type="text" :value="name">
 
-    <h3>Vue data is output as a string without v-html:</h3>
+    <h3 class="principle">Vue data is output as a string without v-html:</h3>
     <p>{{ websiteElement }}</p>
     <p v-html="websiteElement"></p>
     <p><em><strong>Note:</strong> Dynamically rendering arbitrary HTML on your website can be very dangerous because it
         can easily lead to XSS vulnerabilities. Only use HTML interpolation on trusted content and never on
         user-provided content. (<a href="https://vuejs.org/v2/guide/syntax.html#Raw-HTML">docs</a>)</em></p>
+
+    <h3 class="principle">v-model simplifies 2-way data binding</h3>
+    <p>You can just add <strong>v-model</strong> to an element to have the data updated instead of creating methods to
+      pass data back & forth.</p>
+    <h2>The best country to visit is <span class="example">{{ favCountry }}</span>!</h2>
+    <input type="text" v-model="favCountry">
   </div>
 
   <script src="app.js"></script>

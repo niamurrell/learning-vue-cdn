@@ -1,0 +1,10 @@
+.example {
+  color: orangered;
+}
+
+.principle {
+  display: table;
+  padding: 7px;
+  background-color: peachpuff;
+  color: navy;
+}
