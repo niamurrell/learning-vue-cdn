@@ -1,0 +1,1 @@
+This is a learning repo following [The Net Ninja's VueJS 2 tutorial playlist](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gQcYgjhBoeQH7wiAyZNrYa). Each concept is added in a new commit.
