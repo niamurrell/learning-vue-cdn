@@ -21,10 +21,7 @@
     <button v-on:click="bottleCount--">Drink one!</button>
     <button @dblclick="addTwo">Get two!</button>
     <button @dblclick="minusTwo">Drink two!</button>
-    <p>Check out the <a href="https://vuejs.org/v2/guide/events.html#Event-Modifiers">Vue docs for event modifiers</a>
-      to see how to prevent default behavior, stop propagation, etc. There are also <a
-        href="https://vuejs.org/v2/guide/events.html#Key-Modifiers">key modifiers</a> for key press events (like
-      pressing enter, tab, etc.).</p>
+    <p>Check out the <a href="https://vuejs.org/v2/guide/events.html#Event-Modifiers">Vue docs for event modifiers</a> to see how to prevent default behavior, stop propagation, etc. There are also <a href="https://vuejs.org/v2/guide/events.html#Key-Modifiers">key modifiers</a> for key press events (like pressing enter, tab, etc.).</p>
 
     <h3 class="principle">Use v-bind to add data to anchor attributes:</h3>
     <a v-bind:href="website">Website</a>
@@ -39,15 +36,21 @@
     <h3 class="principle">Vue data is output as a string without v-html:</h3>
     <p>{{ websiteElement }}</p>
     <p v-html="websiteElement"></p>
-    <p><em><strong>Note:</strong> Dynamically rendering arbitrary HTML on your website can be very dangerous because it
-        can easily lead to XSS vulnerabilities. Only use HTML interpolation on trusted content and never on
-        user-provided content. (<a href="https://vuejs.org/v2/guide/syntax.html#Raw-HTML">docs</a>)</em></p>
+    <p><em><strong>Note:</strong> Dynamically rendering arbitrary HTML on your website can be very dangerous because it can easily lead to XSS vulnerabilities. Only use HTML interpolation on trusted content and never on user-provided content. (<a href="https://vuejs.org/v2/guide/syntax.html#Raw-HTML">docs</a>)</em></p>
 
     <h3 class="principle">v-model simplifies 2-way data binding</h3>
-    <p>You can just add <strong>v-model</strong> to an element to have the data updated instead of creating methods to
-      pass data back & forth.</p>
+    <p>You can just add <strong>v-model</strong> to an element to have the data updated instead of creating methods to pass data back & forth.</p>
     <h2>The best country to visit is <span class="example">{{ favCountry }}</span>!</h2>
     <input type="text" v-model="favCountry">
+
+    <h3 class="principle">Functions are better in computed than in methods</h3>
+    <h2>You have <span class="example">{{ kombuchaCount }}</span> bottles of kombucha.</h2>
+    <button @click="a++">Add to A</button>
+    <button @click="b++">Add to B</button>
+    <p>A is <span class="example">{{ a }}</span>, added to kombucha bottles it's <span class="example">{{ addToA() }}</span> and the computed function returns <span class="example">{{ addToAComputed }}</span>.</p>
+    <p>B is <span class="example">{{ b }}</span>, added to kombucha bottles it's <span class="example">{{ addToB() }}</span> and the computed function returns <span class="example">{{ addToBComputed }}</span>.</p>
+    <p><em>When the functions are methods, <strong>all methods</strong> fire with each click event. On the other hand, when the functions are <strong>computed</strong>, only the clicked event fires on click.</em> <a href="https://vuejs.org/v2/guide/computed.html">See docs</a>.</p>
+
   </div>
 
   <script src="app.js"></script>
