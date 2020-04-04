@@ -62,6 +62,18 @@
     <button v-on:click="available = !available">Toggle available</button>
     <div v-bind:class="computedClasses"><span>{{ name }} in the house!!</span></div>
 
+    <h3 class="principle">Conditionals have their own bindings too</h3>
+    <button v-on:click="success = !success">Toggle Success</button>
+    <button v-on:click="error = !error">Toggle Error</button>
+    <p class="example" v-if="error">This is an error!!</p>
+    <p class="example" v-else-if="success">This is a success!!</p>
+    <p>With <strong>v-if</strong>, the element it's applied to will show or not show depending on whether the <strong>if</strong> value is true or false. Likewise <strong>v-else-if</strong> follows the normal JS ordering and only renders if the first conditional is false.</p>
+    <p>Another option is <strong>v-show</strong> if you don't want to remove elements from the DOM...it adds <em>display: none;</em> to the element:</p>
+    <p class="example" v-show="error2">This is another error!!</p>
+    <p class="example" v-show="success2">This is another success!!</p>
+    <button v-on:click="success2 = !success2">Toggle Success 2</button>
+    <button v-on:click="error2 = !error2">Toggle Error 2</button>
+
   </div>
 
   <script src="app.js"></script>

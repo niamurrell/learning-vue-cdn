@@ -13,6 +13,10 @@ new Vue({
     availableDemo: false,
     available: false,
     nearby: false,
+    success: false,
+    error: false,
+    success2: false,
+    error2: false,
   },
   methods: {
     greet: function () { return `Good morning ${this.name}!` },
