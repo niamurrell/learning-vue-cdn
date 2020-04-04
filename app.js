@@ -1,5 +1,5 @@
 new Vue({
-  el: '#vue-app',
+  el: '#vue-app-one',
   data: {
     name: 'Nonna',
     job: 'Baller',
@@ -36,5 +36,12 @@ new Vue({
     addToAComputed: function () { /* console.log('addToA computed function'); */ return this.kombuchaCount + this.a },
     addToBComputed: function () { /* console.log('addToB computed function'); */ return this.kombuchaCount + this.b },
     computedClasses: function () { return { available: this.available, nearby: this.nearby, } },
+  },
+});
+
+new Vue({
+  el: '#vue-app-two',
+  data: {
+    title: 'This is another Vue instance!'
   },
 });

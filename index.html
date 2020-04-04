@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <div id="vue-app">
+  <div id="vue-app-one">
     <h1><span class="example">{{ greet(name) }}</span> You're such a <span class="example">{{ job }}</span>.
     </h1>
 
@@ -93,7 +93,10 @@
         <td v-for="(val, key) in pup">{{ key }}: {{ val }}</td>
       </tr>
     </table>
+  </div>
 
+  <div id="vue-app-two">
+    <h1>{{ title }}</h1>
   </div>
 
   <script src="app.js"></script>
