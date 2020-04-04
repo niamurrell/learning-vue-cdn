@@ -1,3 +1,19 @@
+Vue.component('greeting', {
+  template: '<p>This is a re-usable Vue component by {{ name }}. <button v-on:click="changeName">change name</button></p>',
+  // Data MUST be returned from a function, otherwise it won't be reactive!
+  // Docs: https://vuejs.org/v2/guide/components.html#data-Must-Be-a-Function
+  data: function () {
+    return {
+      name: 'Carmello'
+    }
+  },
+  methods: {
+    changeName: function () {
+      this.name = 'Anthony!';
+    }
+  }
+});
+
 new Vue({
   el: '#vue-app-one',
   data: {
