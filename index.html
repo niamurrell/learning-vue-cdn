@@ -105,6 +105,13 @@
 
     <h3 class="principle">Here's that component again</h3>
     <greeting></greeting>
+
+    <h3 class="principle">Refs let you access elements on a page</h3>
+    <p>What's your favorite color?</p>
+    <input type="text" ref="colorInput">
+    <button v-on:click="readRefs">Submit</button>
+    <p>Got it! Your favorite color is <span class="example">{{ faveColor }}</span>.</p>
+    <p>It's not just user input though, refs have a whole lot of properties, for example <strong>innerText</strong> and many many more.</p>
   </div>
 
   <script src="app.js"></script>

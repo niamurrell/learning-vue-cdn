@@ -58,6 +58,12 @@ new Vue({
 new Vue({
   el: '#vue-app-two',
   data: {
-    title: 'This is another Vue instance!'
+    title: 'This is another Vue instance!',
+    faveColor: 'unknown',
+  },
+  methods: {
+    readRefs: function () {
+      this.faveColor = this.$refs.colorInput.value;
+    }
   },
 });
