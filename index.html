@@ -12,6 +12,16 @@
 <body>
   <div id="vue-app">
     <h1>{{ greet(name) }} You're such a {{ job }}.</h1>
+    <h2>You have {{ bottleCount }} bottles of champagne.</h2>
+    <p>Events can be in the HTML or in the Vue instance. <strong>v=on:</strong> === <strong>@</strong>.</p>
+    <button v-on:click="bottleCount++">Get one!</button>
+    <button v-on:click="bottleCount--">Drink one!</button>
+    <button @dblclick="addTwo">Get two!</button>
+    <button @dblclick="minusTwo">Drink two!</button>
+    <p>Check out the <a href="https://vuejs.org/v2/guide/events.html#Event-Modifiers">Vue docs for event modifiers</a>
+      to see how to prevent default behavior, stop propagation, etc. There are also <a
+        href="https://vuejs.org/v2/guide/events.html#Key-Modifiers">key modifiers</a> for key press events (like
+      pressing enter, tab, etc.).</p>
 
     <h3>Use v-bind to add data to anchor attributes:</h3>
     <a v-bind:href="website">Website</a>
