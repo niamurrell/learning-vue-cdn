@@ -51,6 +51,17 @@
     <p>B is <span class="example">{{ b }}</span>, added to kombucha bottles it's <span class="example">{{ addToB() }}</span> and the computed function returns <span class="example">{{ addToBComputed }}</span>.</p>
     <p><em>When the functions are methods, <strong>all methods</strong> fire with each click event. On the other hand, when the functions are <strong>computed</strong>, only the clicked event fires on click.</em> <a href="https://vuejs.org/v2/guide/computed.html">See docs</a>.</p>
 
+    <h3 class="principle">Dynamically update CSS with click events</h3>
+    <p><strong>v-bind:class</strong> expects an object of comma-separated classes:</p>
+    <div v-on:click="availableDemo = !availableDemo" v-bind:class="{availableDemo: availableDemo}">Click this: 
+      <span>{{ name }} in the house!!</span>
+    </div>
+    <br>
+    <p>If you have a lot of potential classes though, it's more straightforward to create the object in a function (in this case, <strong>computedClasses</strong>), and bind the function in place of an object of classes:</p>
+    <button v-on:click="nearby = !nearby">Toggle nearby</button>
+    <button v-on:click="available = !available">Toggle available</button>
+    <div v-bind:class="computedClasses"><span>{{ name }} in the house!!</span></div>
+
   </div>
 
   <script src="app.js"></script>

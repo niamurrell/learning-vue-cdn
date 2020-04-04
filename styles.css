@@ -8,3 +8,18 @@
   background-color: peachpuff;
   color: navy;
 }
+
+.available span{
+  padding: 4px;
+  background: greenyellow;
+}
+
+.availableDemo span{
+  padding: 4px;
+  background: turquoise;
+}
+
+.nearby span:after{
+  content: "nearby";
+  margin-left: 10px;
+}
